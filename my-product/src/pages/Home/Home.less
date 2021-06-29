@@ -1,57 +1,55 @@
 .content{
-  margin-top: 10px;
-  box-sizing: border-box;
-  .content_item{
+  .header{
     width: 100%;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    border-radius: 10px;
     background: #fff;
+  }
+  .content_{
+    background: #fff;
+    margin-bottom: 10px;
     padding: 10px 10px;
-    .head_content{
+    box-sizing: border-box;
+    .header_content{
       display: flex;
       align-items: center;
       .head{
-        width: 40px;
-        height: 40px;
-        border-radius: 5px;
+        width: 45px;
+        height: 45px;
+        border-radius: 30px;
         overflow: hidden;
-        image{
-          width: 100%;
-          height: 100%;
-          display: block;
-        }
+        background: #414141;
       }
-      .name{
-        padding-left: 15px;
+      .username{
+        padding-left: 10px;
       }
     }
-    .content_txt{
-      display: block;
-      font-size: 14px;
-      line-height: 25px;
-      padding: 15px 0;
+    .txt_content{
+      padding: 10px 0;
+      color: #353535;
+      font-size: 15px;
+      .content_txt{
+
+      }
     }
-    .thume_content{
+    .pic_content{
+      border-radius: 7px;
+      overflow: hidden;
       display: grid;
-      grid-template-columns: repeat(3,1fr);
       grid-gap: 5px;
-      .item{
+      grid-template-columns: repeat(3,1fr);
+      .pic_item{
         width: 100%;
         height: 100%;
-        overflow: hidden;
-        border-radius: 5px;
-        background: #f7f7f7;
+        display: block;
         image{
           width: 100%;
           height: 100%;
           display: block;
-        }
-        video{
-          width: 100%;
-          height: 100%;
         }
       }
     }
   }
+}
+
+page{
+  background: #f2f2f2;
 }

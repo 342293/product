@@ -1,57 +1,49 @@
-.content {
-  margin-top: 10px;
-  box-sizing: border-box;
-}
-.content .content_item {
+.content .header {
   width: 100%;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  border-radius: 10px;
   background: #fff;
-  padding: 10px 10px;
 }
-.content .content_item .head_content {
+.content .content_ {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+.content .content_ .header_content {
   display: flex;
   align-items: center;
 }
-.content .content_item .head_content .head {
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
+.content .content_ .header_content .head {
+  width: 45px;
+  height: 45px;
+  border-radius: 30px;
   overflow: hidden;
+  background: #414141;
 }
-.content .content_item .head_content .head image {
-  width: 100%;
-  height: 100%;
-  display: block;
+.content .content_ .header_content .username {
+  padding-left: 10px;
 }
-.content .content_item .head_content .name {
-  padding-left: 15px;
+.content .content_ .txt_content {
+  padding: 10px 0;
+  color: #353535;
+  font-size: 15px;
 }
-.content .content_item .content_txt {
-  display: block;
-  font-size: 14px;
-  line-height: 25px;
-  padding: 15px 0;
-}
-.content .content_item .thume_content {
+.content .content_ .pic_content {
+  border-radius: 7px;
+  overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
 }
-.content .content_item .thume_content .item {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 5px;
-  background: #f7f7f7;
-}
-.content .content_item .thume_content .item image {
+.content .content_ .pic_content .pic_item {
   width: 100%;
   height: 100%;
   display: block;
 }
-.content .content_item .thume_content .item video {
+.content .content_ .pic_content .pic_item image {
   width: 100%;
   height: 100%;
+  display: block;
+}
+page {
+  background: #f2f2f2;
 }

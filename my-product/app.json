@@ -9,5 +9,21 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "src/pages/Home/Home",
+      "text": "产品",
+      "iconPath": "src/public/icon/wz.png",
+      "selectedIconPath": "src/public/icon/wz.png"
+    },{
+      "pagePath": "src/pages/Store/Store",
+      "text": "门店",
+      "iconPath": "src/public/icon/dh.png",
+      "selectedIconPath": "src/public/icon/dh.png"
+    }]
+  },
   "sitemapLocation": "sitemap.json"
 }

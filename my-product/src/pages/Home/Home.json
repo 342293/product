@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "产品"
+  "navigationBarTitleText": "产品",
+  "navigationStyle": "custom"
 }
