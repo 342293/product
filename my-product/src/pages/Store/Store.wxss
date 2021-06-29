@@ -71,6 +71,3 @@
   display: block;
   margin-right: 5px;
 }
-.content .address_content .address_item .business_content .message .phone {
-  color: #999;
-}

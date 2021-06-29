@@ -12,7 +12,7 @@
             <view class="business_content">
                 <view class="business_info">
                     <image src="../../public/icon/time.svg" mode="widthFix"></image>
-                    <text class="business_time">营业时间：{{item.business_time}}</text>
+                    <text class="business_time">营业时间：{{item.start_time}}-{{item.close_time}}</text>
                     <view class="loader">{{item.loader}}</view>
                 </view>
                 <view class="message" bindtap="bindPhone">

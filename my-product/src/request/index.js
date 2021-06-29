@@ -1,4 +1,4 @@
-const BaseUrl ="http://192.168.3.107:1244/product/api/v1"
+const BaseUrl ="http://118.195.191.226:1244/product/api/v1"
 let headers = {}
 let count = 0
 let time = 1000

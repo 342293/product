@@ -10,7 +10,8 @@ const address = sequelize.define('address', {
     company_name: Sequelize.STRING,
     company_detailed: Sequelize.STRING,
     distance: Sequelize.STRING,
-    business_time: Sequelize.STRING,
+    start_time:Sequelize.STRING,
+    close_time:Sequelize.STRING,
     loader:Sequelize.STRING,
     longitude:Sequelize.INTEGER,
     latitude:Sequelize.INTEGER
