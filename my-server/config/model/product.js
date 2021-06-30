@@ -7,10 +7,13 @@ const product = sequelize.define('product', {
         primaryKey: true,
         autoIncrement: true,
     },
+    head:Sequelize.STRING,
+    username:Sequelize.STRING,
     content:Sequelize.STRING,
+    theme_id:Sequelize.STRING,
     create_time:Sequelize.STRING,
     last_time:Sequelize.STRING,
-    thume_id:Sequelize.STRING
+
 }, {
     timestamps: false,
     freezeTableName: true
