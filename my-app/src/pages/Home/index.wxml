@@ -1,0 +1,39 @@
+<view class="content">
+    <view class="product_content" wx:for="{{product}}" wx:key="index">
+        <view class="product" wx:if="{{item.galleries.length > 1}}">
+            <text class="product_txt">{{item.content}}</text>
+            <view class="product_picture">
+                <view class="product_item"
+                      wx:if="{{index < 3}}"
+                      wx:for="{{item.galleries}}"
+                      wx:for-item="item1"
+                      wx:for-index="index1"
+                      wx:key="index1">
+                    <image lazy-load src="{{item1.url}}" mode="widthFix"></image>
+                </view>
+            </view>
+            <view class="product_upload_info">
+                <text class="time">09-24</text>
+            </view>
+        </view>
+        <view wx:else class="product_layout_content">
+            <view class="layout_content">
+                <view class="layout_left">
+                    <text class="product_title">{{item.content}}</text>
+                </view>
+                <view class="layout_right">
+                    <image
+                            wx:for="{{item.galleries}}"
+                            wx:for-item="item1"
+                            wx:for-index="index1"
+                            wx:key="index1"
+                            lazy-load src="{{item1.url}}" mode="widthFix"></image>
+                </view>
+            </view>
+            <view class="product_upload_info">
+                <text class="time">09-24</text>
+            </view>
+        </view>
+
+    </view>
+</view>

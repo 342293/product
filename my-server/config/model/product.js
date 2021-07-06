@@ -7,10 +7,8 @@ const product = sequelize.define('product', {
         primaryKey: true,
         autoIncrement: true,
     },
-    head:Sequelize.STRING,
-    username:Sequelize.STRING,
     content:Sequelize.STRING,
-    theme_id:Sequelize.STRING,
+    gallery_id:Sequelize.STRING,
     create_time:Sequelize.STRING,
     last_time:Sequelize.STRING,
 
@@ -19,4 +17,22 @@ const product = sequelize.define('product', {
     freezeTableName: true
 })
 
-module.exports = product
+const gallery = sequelize.define('gallery',{
+    id: {
+        type: Sequelize.INTEGER(11),
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    gallery_pid:Sequelize.STRING,
+    url:Sequelize.STRING
+},{
+    timestamps: false,
+    freezeTableName: true
+})
+
+product.hasMany(gallery,{foreignKey:"gallery_pid"})
+
+module.exports = {
+    product,
+    gallery
+}

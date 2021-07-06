@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "src/pages/Home/index",
+    "src/pages/Store/Store"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "午阳椅套",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "borderStyle": "white",
+    "selectedColor": "#ccc",
+    "list": [
+      {
+        "pagePath": "src/pages/Home/index",
+        "text": "产品",
+        "iconPath": "./src/public/icon/Tabbal/home.png",
+        "selectedIconPath": "./src/public/icon/Tabbal/home.png"
+      },
+      {
+        "pagePath": "src/pages/Store/Store",
+        "text": "门店",
+        "iconPath": "./src/public/icon/Tabbal/dh.png",
+        "selectedIconPath": "./src/public/icon/Tabbal/dh.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

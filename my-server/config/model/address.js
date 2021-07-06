@@ -12,7 +12,6 @@ const address = sequelize.define('address', {
     distance: Sequelize.STRING,
     start_time:Sequelize.STRING,
     close_time:Sequelize.STRING,
-    loader:Sequelize.STRING,
     longitude:Sequelize.INTEGER,
     latitude:Sequelize.INTEGER
 }, {

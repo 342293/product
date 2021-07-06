@@ -1,0 +1,76 @@
+.content .map map {
+  width: 100%;
+  height: 400rpx;
+}
+.content .address_content {
+  padding: 0 10px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+.content .address_content .address_item {
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background: #fff;
+  padding-bottom: 15px;
+  border-radius: 10px;
+}
+.content .address_content .address_item .address_info {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f1f3;
+  flex-direction: column;
+}
+.content .address_content .address_item .address_info text {
+  display: inline-block;
+}
+.content .address_content .address_item .address_info .company_name {
+  padding-bottom: 3px;
+}
+.content .address_content .address_item .address_info .company_detailed {
+  font-size: 11px;
+  color: #353535;
+  padding-bottom: 4px;
+}
+.content .address_content .address_item .address_info .distance {
+  color: #999999;
+  font-size: 11px;
+}
+.content .address_content .address_item .business_content .business_info {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+}
+.content .address_content .address_item .business_content .business_info image {
+  width: 17px;
+  height: 17px;
+  display: block;
+  margin-right: 5px;
+}
+.content .address_content .address_item .business_content .business_info .business_time {
+  color: #353535;
+  font-size: 12px;
+}
+.content .address_content .address_item .business_content .business_info .loader {
+  font-size: 12px;
+  border: 1px solid #414141;
+  border-radius: 3px;
+  padding: 2px 3px;
+  margin-left: 30px;
+}
+.content .address_content .address_item .business_content .message {
+  display: flex;
+  align-items: center;
+  color: #353535;
+  font-size: 12px;
+}
+.content .address_content .address_item .business_content .message image {
+  width: 17px;
+  height: 17px;
+  display: block;
+  margin-right: 5px;
+}
+page {
+  background: #f2f2f2;
+}
