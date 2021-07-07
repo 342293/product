@@ -5,8 +5,13 @@ export function Toast(icon,content){
     })
 }
 
-export function openLocation(options){
-    Number(options.latitude)
-    Number(options.longitude)
-    console.log(options)
+export function previewImage(current,list){
+    let lists = []
+    for (let i = 0; i < list.length; i++) {
+        lists.push(list[i].url)
+    }
+    wx.previewImage({
+        current: current,
+        urls: lists
+    })
 }

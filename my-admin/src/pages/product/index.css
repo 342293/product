@@ -1,0 +1,57 @@
+.Modal_Mask {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+  padding: 50px;
+  background: #00000073;
+}
+.Modal_Mask .Model_content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #fff;
+  display: grid;
+  padding: 10px;
+  grid-template-rows: auto 12fr 1fr;
+}
+.Modal_Mask .Model_content .header {
+  padding: 10px 20px 20px 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+}
+.Modal_Mask .Model_content .main {
+  display: grid;
+  height: 100px;
+  box-sizing: border-box;
+  grid-gap: 5px;
+  margin: 10px 0;
+  grid-template-columns: repeat(10, 1fr);
+}
+.Modal_Mask .Model_content .main .item_pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: #ccc;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.Modal_Mask .Model_content .main .item_pic img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.Modal_Mask .Model_content .footer .footer_content {
+  display: flex;
+  justify-content: flex-end;
+}
+.Modal_Mask .Model_content .footer .footer_content Button {
+  margin-right: 20px;
+}
+/*# sourceMappingURL=index.css.map */

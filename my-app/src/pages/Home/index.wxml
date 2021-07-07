@@ -4,6 +4,9 @@
             <text class="product_txt">{{item.content}}</text>
             <view class="product_picture">
                 <view class="product_item"
+                      data-list="{{item.galleries}}"
+                      data-item="{{item1.url}}"
+                      bindtap="lookup"
                       wx:if="{{index < 3}}"
                       wx:for="{{item.galleries}}"
                       wx:for-item="item1"

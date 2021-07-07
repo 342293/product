@@ -1,4 +1,5 @@
 const {request} = require('../../request/index')
+const {previewImage} = require('../../utils/index')
 Page({
 
   /**
@@ -18,6 +19,10 @@ Page({
     const product = await request({ url:"/product" })
     this.data.product = product.product
     this.setData({ product:this.data.product })
+  },
+  lookup(e){
+    const {list,item} = e.currentTarget.dataset
+    previewImage(item,list)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
