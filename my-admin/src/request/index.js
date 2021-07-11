@@ -9,7 +9,7 @@ function request(options){
         http({
             ...options
         }).then(h => {
-            if(h.data.code === 200){
+            if(h.data.code == 200){
                 resolve(h.data)
             }
         })

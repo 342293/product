@@ -6,13 +6,21 @@ Page({
    * 页面的初始数据
    */
   data: {
+    longitude:0,
+    latitude:0,
     address:[]
   },
   async get_address(){
     const { address } = await request({ url:"/address" })
-    console.log(address)
+    const {latitude,longitude} = address[0]
     this.data.address = address
-    this.setData({ address:this.data.address })
+    this.data.longitude = longitude
+    this.data.latitude = latitude
+    this.setData({
+      address:this.data.address,
+      longitude:this.data.longitude,
+      latitude:this.data.latitude
+    })
   },
   bindItemAddress(e){
     const option = e.currentTarget.dataset.item

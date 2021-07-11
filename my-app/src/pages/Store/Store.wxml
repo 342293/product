@@ -1,6 +1,6 @@
 <view class="content">
     <view class="map">
-        <map longitude="113.33432738104578" latitude="22.95091177208892"></map>
+        <map longitude="{{longitude}}" latitude="{{latitude}}"></map>
     </view>
     <view class="address_content">
         <view class="address_item" wx:for="{{address}}" wx:key="index">

@@ -1,6 +1,6 @@
 .content .map map {
   width: 100%;
-  height: 400rpx;
+  height: 750rpx;
 }
 .content .address_content {
   padding: 0 10px;
