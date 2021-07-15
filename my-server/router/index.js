@@ -45,7 +45,7 @@ async function get_product(req,res){
         order:[['id','DESC']],
         include:[{
             model:gallery,
-            attributes:["url"]
+            attributes:["url","type"]
         }]
     })
     res.json({

@@ -7,12 +7,8 @@ const product = sequelize.define('product', {
         primaryKey: true,
         autoIncrement: true
     },
-    content:{
-        type:Sequelize.STRING
-    },
-    gallery_id:{
-        type:Sequelize.STRING
-    },
+    content:Sequelize.STRING,
+    gallery_id:Sequelize.STRING,
     create_time:Sequelize.STRING,
     last_time:Sequelize.STRING,
 
@@ -27,12 +23,9 @@ const gallery = sequelize.define('gallery',{
         primaryKey: true,
         autoIncrement: true,
     },
-    gallery_pid:{
-        type:Sequelize.STRING
-    },
-    url:{
-        type:Sequelize.STRING
-    }
+    gallery_pid:Sequelize.STRING,
+    type:Sequelize.STRING,
+    url:Sequelize.STRING
 },{
     timestamps: false,
     freezeTableName: true
