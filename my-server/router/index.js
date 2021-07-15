@@ -87,7 +87,12 @@ async function upload_product(req,res){
             create_time
         })
         for (let i = 0; i < joi.product_pic.length; i++) {
+            let res;
+            let type = joi.product_pic[i].url.lastIndexOf(".")
+            const result = joi.product_pic[i].url.substr(type+1)
+            result == "mp4" || result == "MP4" ? res = 2 : res = 1
             await gallery.create({
+                type:res,
                 gallery_pid:gallery_id,
                 url:joi.product_pic[i].url
             })
