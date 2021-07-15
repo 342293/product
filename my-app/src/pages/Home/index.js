@@ -1,11 +1,12 @@
 const {request} = require('../../request/index')
-const {previewImage} = require('../../utils/index')
+const {previewImage,makePhoneCall} = require('../../utils/index')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    Open:false,
     product:[]
   },
 
@@ -17,8 +18,17 @@ Page({
   },
   async getProduct(){
     const product = await request({ url:"/product" })
-    this.data.product = product.product
-    this.setData({ product:this.data.product })
+    if(product.product.length > 0){
+      this.data.product = product.product
+      this.data.Open = true
+    }
+    this.setData({
+      product:this.data.product,
+      Open:this.data.Open
+    })
+  },
+  makePhone(){
+    makePhoneCall('13922206799')
   },
   lookup(e){
     const {list,item} = e.currentTarget.dataset

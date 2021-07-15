@@ -15,3 +15,20 @@ export function previewImage(current,list){
         urls: lists
     })
 }
+
+export function makePhoneCall(content){
+    wx.makePhoneCall({
+        phoneNumber:content
+    })
+}
+
+
+export function showLoading(content){
+    wx.showLoading({
+        title:content
+    })
+}
+
+export function hideLoading(){
+    wx.hideLoading()
+}

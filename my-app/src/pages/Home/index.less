@@ -2,6 +2,7 @@ page{
   background: #f2f2f2;
 }
 .content{
+  padding-bottom: 10px;
   .product_content{
     width: 100%;
     margin-top: 10px;
@@ -10,7 +11,7 @@ page{
     background: #fff;
     font-size: 0;
     border-radius: 10px;
-    .product,.product_layout_content{
+    .product{
       .product_txt{
         color: #222222;
         font-weight: 500;
@@ -43,45 +44,23 @@ page{
       }
       .product_upload_info{
         padding: 0 10px;
-        box-sizing: border-box;
-        font-size: 13px;
-        color: #999999;
-      }
-    }
-    .product_layout_content{
-      width: 100%;
-      font-size: 15px;
-      .layout_content{
+        font-size: 0;
         display: flex;
-        .layout_left{
-          flex: 2;
-          .product_title{
-            color: #222222;
-            font-size: 14px;font-weight: 500;
-            margin-right: 10px;
-            text-overflow: -o-ellipsis-lastline;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            line-clamp: 3;
-            -webkit-box-orient: vertical;
-          }
-          .product_upload_layout_info{
-            font-size: 13px;
-            color: #999999;
-          }
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        .time{
+          font-size: 13px;
+          color: #999;
+          margin-right: 10px;
         }
-        .layout_right{
-          flex: 1;
-          background: #1a1a1a;
+        .consulting{
+          background: #409eff;
+          color: #fff;
+          padding: 3px 10px;
+          font-size: 12px;
+          border-radius: 50px;
           overflow: hidden;
-          border-radius: 5px;
-          image{
-            width: 100%;
-            height: 100%;
-            display: block;
-          }
         }
       }
     }
