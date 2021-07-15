@@ -15,12 +15,12 @@
                 </view>
             </view>
             <view class="product_upload_info">
-                <text class="time">09-24</text>
+                <text class="time">{{item.create_time}}</text>
                 <text class="consulting" bindtap="makePhone">预约咨询</text>
             </view>
         </view>
     </view>
 </view>
 <view wx:else class="error_content">
-    <van-empty description="还没有资讯" />
+    <van-empty description="未发布资讯" />
 </view>

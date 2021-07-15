@@ -1,7 +1,6 @@
 {
   "name": "my-app",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "dependencies": {
     "@vant/weapp": "^1.7.1"
@@ -12,5 +11,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }
