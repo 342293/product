@@ -1,39 +1,26 @@
-const {request} = require('../../request/index')
-const {previewImage,makePhoneCall} = require('../../utils/index')
+const { request } = require('../../request/index')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    Open:false,
-    product:[]
+    banner:[]
   },
-
+  async get_banner(){
+    const { banner_list } = await request({url:"/banner"})
+    this.data.banner = banner_list
+    this.setData({
+      banner:this.data.banner
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getProduct()
+    this.get_banner()
   },
-  async getProduct(){
-    const product = await request({ url:"/product" })
-    if(product.product.length > 0){
-      this.data.product = product.product
-      this.data.Open = true
-    }
-    this.setData({
-      product:this.data.product,
-      Open:this.data.Open
-    })
-  },
-  makePhone(){
-    makePhoneCall('13922206799')
-  },
-  lookup(e){
-    const {list,item} = e.currentTarget.dataset
-    previewImage(item,list)
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

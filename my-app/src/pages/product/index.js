@@ -1,44 +1,39 @@
 const {request} = require('../../request/index')
-const { openLocation, JSONParseInt } = require('../../utils/index')
+const {previewImage,makePhoneCall} = require('../../utils/index')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    longitude:0,
-    latitude:0,
-    address:[]
+    Open:false,
+    product:[]
   },
-  async get_address(){
-    const { address } = await request({ url:"/address" })
-    const {latitude,longitude} = address[0]
-    this.data.address = address
-    this.data.longitude = longitude
-    this.data.latitude = latitude
-    this.setData({
-      address:this.data.address,
-      longitude:this.data.longitude,
-      latitude:this.data.latitude
-    })
-  },
-  bindItemAddress(e){
-    const option = e.currentTarget.dataset.item
-    const Object = JSONParseInt(option,['latitude','longitude'])
-    openLocation(Object)
-  },
-  bindPhone(){
-    wx.makePhoneCall({
-      phoneNumber:"13076332293"
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.get_address()
+    this.getProduct()
   },
-
+  async getProduct(){
+    const product = await request({ url:"/product" })
+    if(product.product.length > 0){
+      this.data.product = product.product
+      this.data.Open = true
+    }
+    this.setData({
+      product:this.data.product,
+      Open:this.data.Open
+    })
+  },
+  makePhone(){
+    makePhoneCall('13922206799')
+  },
+  lookup(e){
+    const {list,item} = e.currentTarget.dataset
+    previewImage(item,list)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

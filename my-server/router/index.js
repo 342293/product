@@ -5,6 +5,7 @@ const multer = require('multer')
 const address = require('../config/model/address')
 const {product,gallery} = require('../config/model/product')
 const album = require('../config/model/album')
+const {banner,video} = require('../config/model/banner')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -22,6 +23,7 @@ router.get('/album',(req,res) => get_album(req,res))
 router.post('/upload', upload.single('file'),(req,res) => upload_file(req,res))
 router.post('/upload_product',(req,res) => upload_product(req,res))
 router.delete('/delete_product',(req,res) => delete_product(req,res))
+router.get('/banner',(req,res) => get_banner(req,res))
 
 async function get_address(req,res){
     const time = dayJs().format('HH:mm')
@@ -53,6 +55,7 @@ async function get_product(req,res){
         product:list
     })
 }
+
 async function get_album(req,res){
     const album_list = await album.findAll()
     res.json({
@@ -124,6 +127,15 @@ async function delete_product(req,res){
         message:"选中列删除成功"
     })
     return;
+}
+async function get_banner(req,res){
+    const banner_list = await banner.findAll()
+    const video_list = await video.findAll()
+    res.json({
+        code:200,
+        banner_list,
+        video_list
+    })
 }
 
 module.exports = router

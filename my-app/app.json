@@ -1,12 +1,12 @@
 {
   "pages": [
     "src/pages/Home/index",
+    "src/pages/product/index",
     "src/pages/Store/Store"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "午阳椅套",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -16,6 +16,12 @@
     "list": [
       {
         "pagePath": "src/pages/Home/index",
+        "text": "关于午阳",
+        "iconPath": "./src/public/icon/Tabbal/home.png",
+        "selectedIconPath": "./src/public/icon/Tabbal/home.png"
+      },
+      {
+        "pagePath": "src/pages/product/index",
         "text": "产品",
         "iconPath": "./src/public/icon/Tabbal/home.png",
         "selectedIconPath": "./src/public/icon/Tabbal/home.png"

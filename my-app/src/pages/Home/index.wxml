@@ -1,26 +1,22 @@
-<view wx:if="{{Open}}" class="content">
-    <view class="product_content" wx:for="{{product}}" wx:key="index">
-        <view class="product">
-            <view class="product_txt">{{item.content}}</view>
-            <view class="product_picture" style="grid-template-columns: repeat({{item.galleries.length <= 1 ? '1,1fr' : ''}})">
-                <view class="product_item"
-                      data-list="{{item.galleries}}"
-                      data-item="{{item1.url}}"
-                      bindtap="lookup"
-                      wx:for="{{item.galleries}}"
-                      wx:for-item="item1"
-                      wx:for-index="index1"
-                      wx:key="index1">
-                    <image lazy-load src="{{item1.url}}" mode="widthFix"></image>
-                </view>
-            </view>
-            <view class="product_upload_info">
-                <text class="time">{{item.create_time}}</text>
-                <text class="consulting" bindtap="makePhone">预约咨询</text>
-            </view>
-        </view>
+<view class="content">
+    <image wx:if="{{index < 1}}"
+           wx:for="{{banner}}"
+           wx:key="index"
+           class="thume"
+           src="{{item.thume}}"
+           mode="widthFix"></image>
+    <view class="video_content">
+        <video src="http://118.195.191.226/banner/video.mp4" autoplay></video>
     </view>
-</view>
-<view wx:else class="error_content">
-    <van-empty description="未发布资讯" />
+<!--    <swiper class="banner_content">-->
+<!--        <swiper-item wx:for="{{banner}}" wx:key="index" class="banner_item">-->
+<!--            <image src="{{item.thume}}"></image>-->
+<!--        </swiper-item>-->
+<!--    </swiper>-->
+
+<!--    <view class="video_content">-->
+<!--        <video autoplay src="http://118.195.191.226/banner/video.mp4"></video>-->
+<!--    </view>-->
+
+<!--    <image style="width: 100%;display: block" wx:for="{{banner}}" src="{{item.thume}}" mode="widthFix"></image>-->
 </view>

@@ -1,6 +1,7 @@
 <view class="content">
     <view class="map">
-        <map longitude="{{longitude}}" latitude="{{latitude}}"></map>
+        <map subkey="URIBZ-HJTCX-6CR4K-TROOX-D7AT2-CRB4Q"
+             show-location longitude="{{longitude}}" latitude="{{latitude}}"></map>
     </view>
     <view class="address_content">
         <view class="address_item" wx:for="{{address}}" wx:key="index">

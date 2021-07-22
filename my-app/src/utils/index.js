@@ -22,6 +22,24 @@ export function makePhoneCall(content){
     })
 }
 
+export function openLocation(Object){
+    const {latitude,longitude,company_detailed} = Object
+    wx.openLocation({
+        latitude,
+        longitude,
+        name:company_detailed,
+        title:company_detailed
+    })
+}
+
+export function JSONParseInt(Object,Array){
+    for (const Key in Array) {
+        const longitude = parseFloat(Object[Array[Key]])
+        Object[Array[Key]] = longitude
+    }
+    return Object;
+}
+
 
 export function showLoading(content){
     wx.showLoading({
