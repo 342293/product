@@ -6,6 +6,7 @@ const address = require('../config/model/address')
 const {product,gallery} = require('../config/model/product')
 const album = require('../config/model/album')
 const {banner,video} = require('../config/model/banner')
+const {category,secondary_classification} = require('../config/model/Category')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -14,7 +15,7 @@ const storage = multer.diskStorage({
     filename: function (req, file, cb) {
         cb(null, Date.now() + "-" + file.originalname);
     }
-});
+})
 const upload = multer({ storage: storage })
 
 router.get('/address', (req,res) => get_address(req,res))
@@ -24,6 +25,7 @@ router.post('/upload', upload.single('file'),(req,res) => upload_file(req,res))
 router.post('/upload_product',(req,res) => upload_product(req,res))
 router.delete('/delete_product',(req,res) => delete_product(req,res))
 router.get('/banner',(req,res) => get_banner(req,res))
+router.get('/Category',(req,res) => get_Category(req,res))
 
 async function get_address(req,res){
     const time = dayJs().format('HH:mm')
@@ -135,6 +137,19 @@ async function get_banner(req,res){
         code:200,
         banner_list,
         video_list
+    })
+}
+async function get_Category(req,res){
+    const list = await category.findAll({
+        include:[{
+            model:secondary_classification,
+            attributes:["id","title"],
+            as:"children"
+        }]
+    })
+    res.json({
+        code:200,
+        Category:list
     })
 }
 
