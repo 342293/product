@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../config')
 
-const category = sequelize.define('category', {
+const category = sequelize.define("category", {
     id: {
         type: Sequelize.INTEGER(11),
         primaryKey: true,
@@ -13,38 +13,37 @@ const category = sequelize.define('category', {
     freezeTableName: true
 })
 
-const secondary_classification = sequelize.define('secondary_classification', {
+const second_Category = sequelize.define("second_category", {
     id: {
         type: Sequelize.INTEGER(11),
         primaryKey: true,
         autoIncrement: true,
     },
     title:Sequelize.STRING,
-    secondary_classification_pid:Sequelize.STRING
-
+    category_pid:Sequelize.STRING
 }, {
     timestamps: false,
     freezeTableName: true
 })
 
-// const three_level_classification = sequelize.define('three_level_classification', {
-//     id: {
-//         type: Sequelize.INTEGER(11),
-//         primaryKey: true,
-//         autoIncrement: true,
-//     },
-//     title:Sequelize.STRING,
-//     three_level_classification_ppid:Sequelize.STRING
-// }, {
-//     timestamps: false,
-//     freezeTableName: true
-// })
+const three_Category = sequelize.define("three_category", {
+    id: {
+        type: Sequelize.INTEGER(11),
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    title:Sequelize.STRING,
+    category_ppid:Sequelize.STRING
+}, {
+    timestamps: false,
+    freezeTableName: true
+})
 
-category.hasMany(secondary_classification,{ as:'children', foreignKey:"secondary_classification_pid",sourceKey:"id"})
-// secondary_classification.hasMany(three_level_classification,{foreignKey:"three_level_classification_ppid",sourceKey:"secondary_classification_pid"})
+category.hasMany(second_Category,{ as:"children", foreignKey:"category_pid",sourceKey:"id"})
+second_Category.hasMany(three_Category,{as:"child",foreignKey:"category_ppid",sourceKey:"category_pid"})
 
 module.exports = {
     category,
-    secondary_classification,
-    // three_level_classification
+    second_Category,
+    three_Category
 }

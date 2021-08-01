@@ -6,7 +6,7 @@ const address = require('../config/model/address')
 const {product,gallery} = require('../config/model/product')
 const album = require('../config/model/album')
 const {banner,video} = require('../config/model/banner')
-const {category,secondary_classification} = require('../config/model/Category')
+const {category,second_Category,three_Category} = require('../config/model/Category')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -142,9 +142,12 @@ async function get_banner(req,res){
 async function get_Category(req,res){
     const list = await category.findAll({
         include:[{
-            model:secondary_classification,
-            attributes:["id","title"],
-            as:"children"
+            model:second_Category,as:"children",include:[
+                {
+                    model:three_Category,
+                    as:"child"
+                }
+            ]
         }]
     })
     res.json({
