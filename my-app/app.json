@@ -2,7 +2,8 @@
   "pages": [
     "src/pages/Home/index",
     "src/pages/product/index",
-    "src/pages/Store/Store"
+    "src/pages/Store/Store",
+    "src/pages/props/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

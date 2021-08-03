@@ -5,7 +5,11 @@ const { Toast } = require('../utils/index')
 export function request(options){
     return new Promise((resolve, reject) => {
         options.url = BaseUrl+options.url
-        wx.request({...options,success:h => {
+        wx.request({...options,
+            header: {
+                'content-type': 'application/x-www-form-urlencoded',
+            },
+            success:h => {
                 if(h.data.code == 200){
                     resolve(h.data)
                 }else{

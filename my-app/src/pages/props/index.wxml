@@ -1,0 +1,37 @@
+<van-popup
+        show="{{ true }}"
+        round
+        position="top"
+        custom-style="height: 70%;"
+        bind:close="onClose">
+
+    <view class="content">
+        <view class="cartname">
+            <text class="name {{category_index == index ? 'active_txt' : ''}}"
+                  wx:for="{{Category}}"
+                  wx:key="index"
+                  bindtap="bindCategory"
+                  data-index="{{index}}"
+                  data-id="{{item.id}}"
+            >{{item.title}}</text>
+        </view>
+        <view class="attribute">
+            <view class="attr_item"
+                  wx:for="{{Category_attr}}"
+                  wx:for-item="itemA"
+                  wx:for-index="indexA"
+                  wx:key="indexA"
+            >
+                <text class="attr_title">{{itemA.title}}</text>
+                <view class="attr_wrap"
+                      wx:for="{{itemA.child}}"
+                      wx:for-item="itemB"
+                      wx:for-index="indexB"
+                      wx:key="indexB">
+                    <text class="attr_txt">{{itemB.title}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</van-popup>

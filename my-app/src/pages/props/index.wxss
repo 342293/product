@@ -1,0 +1,48 @@
+.content {
+  height: 100%;
+  display: flex;
+}
+.content .cartname {
+  flex: 1;
+  background: #fafafa;
+}
+.content .cartname text {
+  padding: 15px 0;
+  color: #111111;
+  font-size: 13px;
+  font-weight: 550;
+  padding-left: 10px;
+  display: block;
+}
+.content .attribute {
+  flex: 2;
+  color: #111111;
+}
+.content .attribute .attr_item {
+  padding: 15px 15px;
+  box-sizing: border-box;
+}
+.content .attribute .attr_item .attr_wrap {
+  display: grid;
+  grid-gap: 15px;
+  padding-top: 15px;
+  text-align: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+.content .attribute .attr_item .attr_wrap .attr_txt {
+  background: #f8f8f8;
+  border-radius: 5px;
+  border: 1px solid #f8f8f8;
+  font-size: 13px;
+  padding: 10px 0;
+}
+.content .cartname,
+.content .attribute {
+  overflow-y: auto;
+  height: 100%;
+}
+.active_txt {
+  font-weight: 600!important;
+  font-size: 15px!important;
+  background: #fff !important;
+}
