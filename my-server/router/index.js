@@ -26,6 +26,7 @@ router.post('/upload_product',(req,res) => upload_product(req,res))
 router.delete('/delete_product',(req,res) => delete_product(req,res))
 router.get('/banner',(req,res) => get_banner(req,res))
 router.get('/Category',(req,res) => get_Category(req,res))
+router.post('/category_',(req,res) => get_Category_(req,res))
 
 async function get_address(req,res){
     const time = dayJs().format('HH:mm')
@@ -57,6 +58,69 @@ async function get_product(req,res){
         product:list
     })
 }
+async function get_banner(req,res){
+    const banner_list = await banner.findAll()
+    const video_list = await video.findAll()
+    res.json({
+        code:200,
+        banner_list,
+        video_list
+    })
+}
+async function get_Category(req,res){
+    const list = await category.findAll({
+        attributes:["id","title"]
+    })
+    res.json({
+        code:200,
+        Category:list
+    })
+}
+async function get_Category_(req,res){
+    const options = {
+        category_id:Joi.string().required()
+    }
+    try {
+        const joi = await Joi.validate(req.body,options)
+        const data = await second_Category.findAll({
+            where:{
+                category_pid:joi.category_id
+            },
+            attributes:["id","title"],
+            include:[
+                {
+                    model:three_Category,
+                    attributes:["id","title"],
+                    as:"child"
+                }
+            ]
+        })
+        res.json({
+            code:200,
+            message:"获取成功",
+            list:data
+        })
+    }catch (e){
+        const {id} = await category.findOne()
+        const categorys = await second_Category.findAll({
+            where:{category_pid:id},
+            attributes:["id","title"],
+            include:[
+                {
+                    model:three_Category,
+                    as:"child",
+                    attributes:["id","title"],
+                }
+            ]
+        })
+        res.json({
+            code:200,
+            message:"获取成功",
+            list:categorys
+        })
+    }
+}
+
 
 async function get_album(req,res){
     const album_list = await album.findAll()
@@ -129,31 +193,6 @@ async function delete_product(req,res){
         message:"选中列删除成功"
     })
     return;
-}
-async function get_banner(req,res){
-    const banner_list = await banner.findAll()
-    const video_list = await video.findAll()
-    res.json({
-        code:200,
-        banner_list,
-        video_list
-    })
-}
-async function get_Category(req,res){
-    const list = await category.findAll({
-        include:[{
-            model:second_Category,as:"children",include:[
-                {
-                    model:three_Category,
-                    as:"child"
-                }
-            ]
-        }]
-    })
-    res.json({
-        code:200,
-        Category:list
-    })
 }
 
 module.exports = router
