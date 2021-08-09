@@ -23,6 +23,12 @@
                     "pathName": "src/pages/props/index",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "src/pages/product/index",
+                    "pathName": "src/pages/product/index",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

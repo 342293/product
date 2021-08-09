@@ -8,14 +8,26 @@ Page({
   data: {
     longitude:0,
     latitude:0,
-    address:[]
+    address:[],
+    markers:[]
   },
   async get_address(){
+    const {markers} = this.data
     const { address } = await request({ url:"/address" })
     const {latitude,longitude} = address[0]
     this.data.address = address
     this.data.longitude = longitude
     this.data.latitude = latitude
+    for (let i = 0; i < address.length; i++) {
+      markers.push({
+        id:address[i].id,
+        iconPath:"",
+        width:15,
+        height:15,
+        longitude:address[i].longitude,
+        latitude:address[i].latitude,
+      })
+    }
     this.setData({
       address:this.data.address,
       longitude:this.data.longitude,
@@ -23,13 +35,13 @@ Page({
     })
   },
   bindItemAddress(e){
-    const option = e.currentTarget.dataset.item
-    const Object = JSONParseInt(option,['latitude','longitude'])
+    const { item } = e.currentTarget.dataset
+    const Object = JSONParseInt(item,['latitude','longitude'])
     openLocation(Object)
   },
   bindPhone(){
     wx.makePhoneCall({
-      phoneNumber:"13076332293"
+      phoneNumber:"13922206799"
     })
   },
   /**

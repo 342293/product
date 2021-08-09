@@ -1,7 +1,7 @@
 {
   "pages": [
-    "src/pages/Home/index",
     "src/pages/product/index",
+    "src/pages/Home/index",
     "src/pages/Store/Store",
     "src/pages/props/index"
   ],
@@ -11,27 +11,27 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#ccc",
+    "color": "#666",
     "borderStyle": "white",
-    "selectedColor": "#ccc",
+    "selectedColor": "#222",
     "list": [
-      {
-        "pagePath": "src/pages/Home/index",
-        "text": "关于午阳",
-        "iconPath": "./src/public/icon/Tabbal/home.png",
-        "selectedIconPath": "./src/public/icon/Tabbal/home.png"
-      },
       {
         "pagePath": "src/pages/product/index",
         "text": "产品",
-        "iconPath": "./src/public/icon/Tabbal/home.png",
-        "selectedIconPath": "./src/public/icon/Tabbal/home.png"
+        "iconPath": "./src/public/icon/Tabbal/product.png",
+        "selectedIconPath": "./src/public/icon/Tabbal/product.png"
       },
       {
         "pagePath": "src/pages/Store/Store",
         "text": "门店",
-        "iconPath": "./src/public/icon/Tabbal/dh.png",
-        "selectedIconPath": "./src/public/icon/Tabbal/dh.png"
+        "iconPath": "./src/public/icon/Tabbal/go.png",
+        "selectedIconPath": "./src/public/icon/Tabbal/go.png"
+      },
+      {
+        "pagePath": "src/pages/Home/index",
+        "text": "关于午阳",
+        "iconPath": "./src/public/icon/Tabbal/product.png",
+        "selectedIconPath": "./src/public/icon/Tabbal/product.png"
       }
     ]
   },

@@ -1,3 +1,4 @@
+
 <view wx:if="{{Open}}" class="content">
     <view class="product_content" wx:for="{{product}}" wx:key="index">
         <view class="product">
@@ -16,7 +17,7 @@
             </view>
             <view class="product_upload_info">
                 <text class="time">{{item.create_time}}</text>
-                <text class="consulting" bindtap="makePhone">预约咨询</text>
+                <text class="consulting" bindtap="makePhone">产品咨询</text>
             </view>
         </view>
     </view>
