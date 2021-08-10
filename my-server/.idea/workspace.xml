@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7d18282-5b41-4587-975a-556d16f19b45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../my-app/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-app/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/app.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-app/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-app/src/pages/product/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/pages/product/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-app/src/pages/props/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/pages/props/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-app/src/pages/props/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/pages/props/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-app/src/pages/props/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/pages/props/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-app/src/pages/props/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/pages/props/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my-app/src/request/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../my-app/src/request/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="d7d18282-5b41-4587-975a-556d16f19b45" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +34,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1628586078550</updated>
-      <workItem from="1628586079588" duration="2235000" />
+      <workItem from="1628586079588" duration="2496000" />
     </task>
     <servers />
   </component>
