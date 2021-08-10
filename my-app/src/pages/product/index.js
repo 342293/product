@@ -17,7 +17,7 @@ Page({
     this.getProduct()
   },
   async getProduct(){
-    const product = await request({ url:"/product" })
+    const product = await request({ url:"/product",method:"post" })
     if(product.product.length > 0){
       this.data.product = product.product
       this.data.Open = true

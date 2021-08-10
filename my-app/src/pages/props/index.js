@@ -7,7 +7,8 @@ Page({
     data: {
         Category:[],
         Category_attr:[],
-        category_index:0
+        category_index:0,
+        info:{}
     },
 
     /**
@@ -35,6 +36,24 @@ Page({
         this.getcategory_arrt(id)
         this.setData({
             category_index:this.data.category_index
+        })
+    },
+    setIndex(e){
+        const {Category_attr} = this.data
+        const {ida,indexa,indexb} = e.currentTarget.dataset
+        if(this.data.info[ida] == indexb) {
+            this.data.info = new Object()
+            this.data.send = new Object()
+        } else{
+            this.data.send = new Object()
+            this.data.info = new Object()
+            this.data.info[ida] = indexb
+            const id = Category_attr[indexa].child[indexb].id
+            this.data.send.Category_id = id
+        }
+        this.setData({
+            info:this.data.info,
+            send:this.data.send
         })
     },
     /**

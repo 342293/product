@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 router.get('/address', (req,res) => get_address(req,res))
-router.get('/product', (req,res) => get_product(req,res))
+router.post('/product', (req,res) => get_product(req,res))
 router.get('/album',(req,res) => get_album(req,res))
 router.post('/upload', upload.single('file'),(req,res) => upload_file(req,res))
 router.post('/upload_product',(req,res) => upload_product(req,res))
@@ -45,7 +45,11 @@ async function get_address(req,res){
     })
 }
 async function get_product(req,res){
+    const {category_id} = req.body
+    let where = new Object()
+    if(category_id) where.category_id = category_id
     const list = await product.findAll({
+        where,
         attributes:['id','content','create_time'],
         order:[['id','DESC']],
         include:[{

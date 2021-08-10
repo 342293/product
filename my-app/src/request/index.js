@@ -1,4 +1,4 @@
-const BaseUrl = 'http://118.195.191.226:1244/product/api/v1'
+const BaseUrl = 'https://fhb.5yweb.com/product/api/v1'
 
 const { Toast } = require('../utils/index')
 
