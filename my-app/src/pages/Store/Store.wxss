@@ -26,16 +26,12 @@
   display: inline-block;
 }
 .content .address_content .address_item .address_info .company_name {
-  padding-bottom: 3px;
+  padding-bottom: 5px;
 }
 .content .address_content .address_item .address_info .company_detailed {
   font-size: 11px;
   color: #353535;
   padding-bottom: 4px;
-}
-.content .address_content .address_item .address_info .distance {
-  color: #999999;
-  font-size: 11px;
 }
 .content .address_content .address_item .business_content .business_info {
   display: flex;

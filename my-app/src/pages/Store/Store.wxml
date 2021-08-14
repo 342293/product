@@ -8,7 +8,6 @@
             <view class="address_info" data-item="{{item}}" bindtap="bindItemAddress">
                 <text class="company_name">{{item.company_name}}</text>
                 <text class="company_detailed">{{item.company_detailed}}</text>
-                <text class="distance">距离你 {{item.distance}}</text>
             </view>
             <view class="business_content">
                 <view class="business_info">

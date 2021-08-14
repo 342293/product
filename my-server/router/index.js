@@ -25,8 +25,7 @@ router.post('/upload', upload.single('file'),(req,res) => upload_file(req,res))
 router.post('/upload_product',(req,res) => upload_product(req,res))
 router.delete('/delete_product',(req,res) => delete_product(req,res))
 router.get('/banner',(req,res) => get_banner(req,res))
-router.get('/Category',(req,res) => get_Category(req,res))
-router.post('/category_',(req,res) => get_Category_(req,res))
+router.post('/Category',(req,res) => get_Category(req,res))
 
 async function get_address(req,res){
     const time = dayJs().format('HH:mm')
@@ -72,24 +71,16 @@ async function get_banner(req,res){
     })
 }
 async function get_Category(req,res){
-    const list = await category.findAll({
-        attributes:["id","title"]
-    })
-    res.json({
-        code:200,
-        Category:list
-    })
-}
-async function get_Category_(req,res){
-    const options = {
-        category_id:Joi.string().required()
-    }
-    try {
-        const joi = await Joi.validate(req.body,options)
-        const data = await second_Category.findAll({
-            where:{
-                category_pid:joi.category_id
-            },
+    let send = new Object()
+    const body = req.body
+    if(Object.keys(body).length <=0){
+        const left = await category.findAll({
+            attributes:["id","title"]
+        })
+        send.left = left
+        const id = left[0].id
+        const right = await second_Category.findAll({
+            where:{ category_pid:id },
             attributes:["id","title"],
             include:[
                 {
@@ -99,30 +90,27 @@ async function get_Category_(req,res){
                 }
             ]
         })
-        res.json({
-            code:200,
-            message:"获取成功",
-            list:data
-        })
-    }catch (e){
-        const {id} = await category.findOne()
-        const categorys = await second_Category.findAll({
-            where:{category_pid:id},
+        send.right = right
+    }else if(body.category_pid){
+        send = []
+        const {category_pid} = body
+        const category = await second_Category.findAll({
+            where:{ category_pid:category_pid },
             attributes:["id","title"],
             include:[
                 {
                     model:three_Category,
-                    as:"child",
                     attributes:["id","title"],
+                    as:"child"
                 }
             ]
         })
-        res.json({
-            code:200,
-            message:"获取成功",
-            list:categorys
-        })
+        send = category
     }
+    res.json({
+        code:200,
+        Category:send
+    })
 }
 
 

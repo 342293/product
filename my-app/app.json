@@ -1,14 +1,33 @@
 {
   "pages": [
-    "src/pages/props/index",
-    "src/pages/product/index",
     "src/pages/Home/index",
+    "src/pages/product/index",
     "src/pages/Store/Store"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#409eff",
+    "color": "#000",
+    "list": [{
+      "pagePath": "src/pages/Home/index",
+      "text": "午阳",
+      "iconPath": "src/public/icon/Tabbal/real-s.png",
+      "selectedIconPath": "src/public/icon/Tabbal/real.png"
+    },{
+      "pagePath": "src/pages/product/index",
+      "text": "产品",
+      "iconPath": "src/public/icon/Tabbal/product-s.png",
+      "selectedIconPath": "src/public/icon/Tabbal/product.png"
+    },{
+      "pagePath": "src/pages/Store/Store",
+      "text": "门店",
+      "iconPath": "src/public/icon/Tabbal/location-s.png",
+      "selectedIconPath": "src/public/icon/Tabbal/location.png"
+    }]
   },
   "sitemapLocation": "sitemap.json"
 }

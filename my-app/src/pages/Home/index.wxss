@@ -1,3 +1,11 @@
+.content swiper {
+  width: 100%;
+  height: 250px;
+}
+.content swiper swiper-item image {
+  width: 100%;
+  display: block;
+}
 .content .thume {
   width: 100%;
   display: block;

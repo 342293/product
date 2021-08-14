@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "van-popup": "@vant/weapp/popup/index"
-  },
-  "navigationStyle":"default",
-  "navigationBarTitleText": "车型选择"
-}
