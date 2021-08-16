@@ -39,7 +39,8 @@ const three_Category = sequelize.define("three_category", {
     freezeTableName: true
 })
 
-second_Category.hasMany(three_Category,{as:"child",foreignKey:"category_ppid",sourceKey:"id"})
+category.hasMany(second_Category,{as:"children",foreignKey:"category_pid",sourceKey:"id"})
+second_Category.hasMany(three_Category,{as:"children",foreignKey:"category_ppid",sourceKey:"id"})
 
 module.exports = {
     category,

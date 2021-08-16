@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const http = axios.create({
-    baseURL:"http://118.195.191.226:1244/product/api/v1"
+    baseURL:"https://fhb.5yweb.com/product/api/v1"
 })
 
 function request(options){

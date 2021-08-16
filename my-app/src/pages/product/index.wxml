@@ -55,7 +55,7 @@
                     <text class="attr_title">{{itemA.title}}</text>
                     <view class="attr_wrap">
                         <text class="attr_txt {{info[itemA.id] == indexB ? 'active_right' : ''}}"
-                              wx:for="{{itemA.child}}"
+                              wx:for="{{itemA.children}}"
                               wx:for-item="itemB"
                               wx:for-index="indexB"
                               bindtap="setIndex"

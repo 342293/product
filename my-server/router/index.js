@@ -26,6 +26,8 @@ router.post('/upload_product',(req,res) => upload_product(req,res))
 router.delete('/delete_product',(req,res) => delete_product(req,res))
 router.get('/banner',(req,res) => get_banner(req,res))
 router.post('/Category',(req,res) => get_Category(req,res))
+router.delete("/delete_category",(req,res) => delete_category(req,res))
+router.post("/update_category",(req,res) => update_category(req,res))
 
 async function get_address(req,res){
     const time = dayJs().format('HH:mm')
@@ -77,7 +79,6 @@ async function get_Category(req,res){
         const left = await category.findAll({
             attributes:["id","title"]
         })
-        send.left = left
         const id = left[0].id
         const right = await second_Category.findAll({
             where:{ category_pid:id },
@@ -86,13 +87,13 @@ async function get_Category(req,res){
                 {
                     model:three_Category,
                     attributes:["id","title"],
-                    as:"child"
+                    as:"children"
                 }
             ]
         })
+        send.left = left
         send.right = right
     }else if(body.category_pid){
-        send = []
         const {category_pid} = body
         const category = await second_Category.findAll({
             where:{ category_pid:category_pid },
@@ -101,11 +102,30 @@ async function get_Category(req,res){
                 {
                     model:three_Category,
                     attributes:["id","title"],
-                    as:"child"
+                    as:"children"
                 }
             ]
         })
         send = category
+        }else if(body.general){
+        const small_ = await category.findAll({
+            attributes:["id","title","type"],
+            include:[
+                {
+                    model:second_Category,
+                    attributes:["id","title","type"],
+                    as:"children",
+                    include:[
+                        {
+                            model:three_Category,
+                            attributes:["id","title","type"],
+                            as:"children"
+                        }
+                    ]
+                }
+            ]
+        })
+        send = small_
     }
     res.json({
         code:200,
@@ -185,6 +205,55 @@ async function delete_product(req,res){
         message:"选中列删除成功"
     })
     return;
+}
+async function delete_category(req,res){
+    const body = req.body
+    const type = parseInt(body.type)
+    switch (type){
+        case 1:
+            await category.destroy({
+                where:{id:body.id}
+            })
+            break;
+        case 2:
+            await second_Category.destroy({
+                where:{id:body.id}
+            })
+            break;
+        case 3:
+            await three_Category.destroy({
+                where:{id:body.id}
+            })
+            break;
+    }
+    res.json({
+        code:200,
+        message:"删除成功"
+    })
+}
+async function update_category(req,res){
+    const body = req.body
+    switch (body.type){
+        case 1:
+            await category.update({
+                title:body.title
+            },{where:{id:body.id}})
+            break;
+        case 2:
+            await second_Category.update({
+                title:body.title
+            },{where:{id:body.id}})
+            break;
+        case 3:
+            await three_Category.update({
+                title:body.title
+            },{where:{id:body.id}})
+            break;
+    }
+    res.json({
+        code:200,
+        message:"修改成功"
+    })
 }
 
 module.exports = router
