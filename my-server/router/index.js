@@ -28,6 +28,7 @@ router.get('/banner',(req,res) => get_banner(req,res))
 router.post('/Category',(req,res) => get_Category(req,res))
 router.delete("/delete_category",(req,res) => delete_category(req,res))
 router.post("/update_category",(req,res) => update_category(req,res))
+router.post("/upload_category",(req,res) => upload_category(req,res))
 
 async function get_address(req,res){
     const time = dayJs().format('HH:mm')
@@ -254,6 +255,34 @@ async function update_category(req,res){
         code:200,
         message:"修改成功"
     })
+}
+async function upload_category(req,res){
+    const body = req.body
+    const options = {
+        type:Joi.number(),
+        id:Joi.number(),
+        title:Joi.string().required().error(new Error("分类名称不能为空"))
+    }
+    try {
+        const joi = await Joi.validate(req.body,options)
+        switch (joi.type){
+            case 1:
+                category.create({
+                    title:joi.title,
+                    type:1
+                })
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+    }catch (e){
+        res.json({
+            code:2002,
+            message:e.message
+        })
+    }
 }
 
 module.exports = router

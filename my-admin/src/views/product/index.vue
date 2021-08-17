@@ -24,7 +24,13 @@
       </span>
       </el-tree>
     </div>
-    <div class="right"></div>
+    <div class="right">
+      <el-form ref="form" :model="form" label-width="80px">
+        <el-form-item label="产品标题">
+          <el-input v-model="form.title"></el-input>
+        </el-form-item>
+      </el-form>
+    </div>
   </div>
 </template>
 
@@ -34,6 +40,7 @@ import request from "@/request";
 export default {
   data(){
     return{
+      form:new Object(),
       update_info:new Object(),
       item:new Object({
         type:null,
@@ -129,6 +136,7 @@ export default {
 .home{
   display: flex;
   height: 100%;
+  padding: 20px 10px;
   background: #fff;
   .left{
   }
@@ -137,7 +145,7 @@ export default {
   }
   .left,.right{
     flex: 1.5;
-    padding: 20px 10px;
+    padding: 10px 10px;
     height: 100%;
   }
 }

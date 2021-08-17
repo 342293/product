@@ -7,7 +7,8 @@ const category = sequelize.define("category", {
         primaryKey: true,
         autoIncrement: true,
     },
-    title:Sequelize.STRING
+    title:Sequelize.STRING,
+    type:Sequelize.INTEGER
 }, {
     timestamps: false,
     freezeTableName: true
@@ -19,6 +20,7 @@ const second_Category = sequelize.define("second_category", {
         primaryKey: true,
         autoIncrement: true,
     },
+    type:Sequelize.INTEGER,
     title:Sequelize.STRING,
     category_pid:Sequelize.STRING
 }, {
@@ -32,6 +34,7 @@ const three_Category = sequelize.define("three_category", {
         primaryKey: true,
         autoIncrement: true,
     },
+    type:Sequelize.INTEGER,
     title:Sequelize.STRING,
     category_ppid:Sequelize.STRING
 }, {
